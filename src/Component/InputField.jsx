@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useCallback, useState } from 'react'
 import './InputField.css';
 import ItemCard from './ItemCard';
 
@@ -26,9 +26,10 @@ const InputField = () => {
         })
     }
 
-    const deleteButton = (id) => {
+    const deleteButton = useCallback((id) => {
         setData((prev) => prev.filter((item) => item.id !== id));
-    }
+
+    }, []);
 
     return (
         <div className="app-container">
@@ -56,7 +57,7 @@ const InputField = () => {
             </div>
 
             <div>
-                <ItemCard data={data} deleteButton={deleteButton}  />
+                <ItemCard data={data} deleteButton={deleteButton} />
             </div>
 
         </div>
