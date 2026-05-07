@@ -12,7 +12,7 @@ function Login() {
     })
 
     const handleChange = (e) => {
-        const { name, value } = e.target
+        const { name, value } = e.target;
         console.log("typing in field:", name)
         console.log("current value:", value)
 
